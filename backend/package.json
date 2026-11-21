@@ -1,0 +1,20 @@
+{
+  "name": "doomsday-ready-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API for Doomsday Ready: MCU rewatch planner and watch party booking",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/seed.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      PORT: 3001
+      DATA_FILE: /data/db.json
+      # Start with the sample MCU movies and cinemas when the database is empty.
+      SEED_ON_EMPTY: "true"
+    volumes:
+      - doomsday-data:/data
+    ports:
+      - "3001:3001"
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  doomsday-data:
